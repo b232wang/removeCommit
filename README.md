@@ -169,7 +169,7 @@ tokenSale.finalize
 function finalize(bytes32 namespace) external founderOnly(namespace) ;
 ```
 
-4, Activate
+5, Activate
 
 milestoneController.activate
 ```
@@ -298,7 +298,7 @@ function withdraw(bytes32 namespace, uint milestoneId, bytes32 obj) external
 ```
 
 
-6, Refund stage
+7, Refund stage
 milestoneController.startRefundStage
 ```
 /**
