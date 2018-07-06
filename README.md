@@ -1,8 +1,7 @@
 
-** 1, Apply application **
+### 1, Apply application 
 
 registry.apply:
-
 ```
 /**
  * @notice Allows a user to start an application.
@@ -14,7 +13,9 @@ registry.apply:
 function apply(string _project, uint _amount) external;
 ```
 
-2, Challenge application 
+### 2, Challenge application 
+
+registry.challenge
 ```
 /**
  * @notice Starts a poll for a project which is either
@@ -26,8 +27,9 @@ function apply(string _project, uint _amount) external;
 function challenge(string _project) external returns (uint challengeID) ;
 ```
 
-vote:
+#### vote:
 
+plcrVoting.requestVotingRights
 ```
 /**    
  * @notice Loads _numTokens ERC20 tokens into the voting contract for one-to-one voting rights
@@ -37,6 +39,7 @@ vote:
 function requestVotingRights(uint _numTokens) external;
 ```
 
+plcrVoting.commitVote
 ```
 /**
   @notice Commits vote using hash of choice and secret salt to conceal vote until reveal
@@ -49,7 +52,8 @@ function requestVotingRights(uint _numTokens) external;
 function commitVote(uint _pollId, bytes32 _secretHash, uint _numTokens, uint _prevPollId ) external;
 ```
 
-reveal stage:
+#### reveal stage:
+
 plcrVoting.revealStageActive
 ```
 /**
@@ -72,7 +76,7 @@ plcrVoting.revealVote
 function revealVote(uint _pollId, uint _voteOption, uint _salt) external ;
 ```
 
-update status:
+#### update status:
 
 register.updateStatus
 ```
@@ -104,7 +108,8 @@ plcrVoting.withdrawVotingRights
 function withdrawVotingRights(uint _numTokens) external ;
 ```
 
-3, add milestone
+### 3, add milestone
+
 milestoneController.addMilestone
 ```
 /**
@@ -127,9 +132,9 @@ function addMilestone(
     uint[] objMaxRegulationRewards) external founderOnly(namespace)
 ```
 
-4, Token sale 
+### 4, Token sale 
 
-Project owner should transfer their token to TokenCollector
+#### Project owner should transfer their token to TokenCollector
 
 tokenSale.startTokenSale
 ```
@@ -169,7 +174,7 @@ tokenSale.finalize
 function finalize(bytes32 namespace) external founderOnly(namespace) ;
 ```
 
-5, Activate
+### 5, Activate
 
 milestoneController.activate
 ```
@@ -196,7 +201,7 @@ function activate(
 ```
 
 
-6, Reputation system rating
+### 6, Reputation system rating
 
 reputationSystem.startPoll
 ```
@@ -298,7 +303,7 @@ function withdraw(bytes32 namespace, uint milestoneId, bytes32 obj) external
 ```
 
 
-7, Refund stage
+### 7, Refund stage
 milestoneController.startRefundStage
 ```
 /**
