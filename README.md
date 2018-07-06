@@ -1,5 +1,5 @@
 
-** 1, Apply application
+** 1, Apply application **
 
 registry.apply:
 
